@@ -1,20 +1,63 @@
 {
   enableMan = true;
+  # options = {
+  #   number = true;
+  #   relativenumber = true;
+  #   cursorline = true;
+  # };
+  keymaps = [
+    {
+      action = "<cmd>CHADopen<CR>";
+      key = "<leader>l";
+      options = {
+        desc = "Open CHADTree";
+      };
+    }
+    {
+      action = "<cmd>Oil<CR>";
+      key = "<leader>f";
+      options = {
+        desc = "Open CHADTree";
+      };
+    }
+    {
+      action = "<cmd>MCunderCursor<CR>";
+      key = "<leader>c";
+      options = {
+        desc = "Start multicursor";
+      };
+    }
+  ];
   globals = {
     mapleader = " ";
     maplocalleader = " ";
   };
   plugins = {
-    chadtree.enable = true;
+    chadtree = {
+      enable = true;
+    };
     nix.enable = true;
+    image = {
+      enable = true;
+    };
+    noice.enable = true;
+    todo-comments.enable = true;
+    toggleterm.enable = true;
+    neogit.enable = true;
+    dashboard.enable = true;
+    dap.enable = true;
     multicursors.enable = true;
     endwise.enable = true;
-    mini.enable = true;
+    mini = {
+      enable = true;
+      modules = {
+        comment = { };
+      };
+    };
     bufferline.enable = true;
     copilot-lua.suggestion.enabled = false;
     copilot-lua.panel.enabled = false;
     luasnip.enable = true;
-    auto-save.enable = true;
     treesitter.enable = true;
     lspkind.enable = true;
     lint.enable = true;
@@ -88,42 +131,13 @@
           enable = true;
           autostart = true;
         };
-        zls.enable = true;
+        zls = {
+          enable = true;
+          autostart = true;
+        };
       };
     };
   };
   colorschemes.onedark.enable = true;
   clipboard.providers.wl-copy.enable = true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
